@@ -1,0 +1,6 @@
+{
+  "name": "Horulince - Sistema Inteligente para Localização de Veículos e Pessoas",
+  "description": "Sistema inteligente Horulince para identificação e localização de veículos roubados ou furtados e pessoas desaparecidas, com supervisão humana, auditoria e conformidade com a LGPD.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
