@@ -239,12 +239,15 @@ export const IncidentHistory: React.FC<Props> = ({ alerts, onOpenAlertDetails })
               id="printable-report"
               className="bg-white text-slate-900 p-6 rounded-xl font-mono text-xs space-y-4 overflow-y-auto flex-1 shadow-inner"
             >
-              <div className="text-center border-b-2 border-slate-900 pb-3">
+              <div className="text-center border-b-2 border-slate-900 pb-3 flex flex-col items-center">
+                <div className="w-12 h-12 mb-2 p-1 border border-slate-400 rounded-lg bg-white flex items-center justify-center">
+                  <img src="/assets/aistudio/Gemini_Generated_Image_c7beozc7beozc7be_89a95088.jpg" alt="Horulince" className="w-full h-full object-contain" />
+                </div>
                 <h3 className="font-bold text-sm tracking-widest uppercase">
                   ESTADO DE SÃO PAULO &bull; SECRETARIA DE SEGURANÇA PÚBLICA
                 </h3>
                 <h4 className="text-xs font-semibold text-slate-700">
-                  CENTRO INTEGRADO DE COMANDO E CONTROLE (CICC) &bull; SISTEMA SENTINELA IA
+                  CENTRO INTEGRADO DE COMANDO E CONTROLE (CICC) &bull; SISTEMA HORULINCE
                 </h4>
                 <p className="text-[10px] text-slate-500 mt-1">
                   LAUDO PERICIAL DE DETECÇÃO AUTOMATIZADA POR VISÃO COMPUTACIONAL
@@ -253,7 +256,7 @@ export const IncidentHistory: React.FC<Props> = ({ alerts, onOpenAlertDetails })
 
               <div className="grid grid-cols-2 gap-3 text-[11px] border-b border-slate-300 pb-3">
                 <div>
-                  <span className="font-bold block">PROTOCOLO SENTINELA:</span>
+                  <span className="font-bold block">PROTOCOLO HORULINCE:</span>
                   <span>{reportModalAlert.id.toUpperCase()}</span>
                 </div>
                 <div>

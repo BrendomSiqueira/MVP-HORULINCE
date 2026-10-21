@@ -12,6 +12,7 @@ import {
   AssistedSearchCase,
   AuditLogEntry,
   ExperimentalMetrics,
+  TestVideoSource,
 } from '../types/surveillance.ts';
 
 // Base de veículos com dados fictícios para simulação acadêmica do Horulince
@@ -460,3 +461,74 @@ export const INITIAL_EXPERIMENTAL_METRICS: ExperimentalMetrics = {
   testedDatasets: 0,
   isSimulatedBenchmarkDone: false,
 };
+
+// Aliases para integração das telas especializadas
+export const INITIAL_PERSON_CASE = OFFICIAL_ASSISTED_CASE;
+export const INITIAL_CANDIDATE_EVENTS = OFFICIAL_ASSISTED_CASE.candidateEvents;
+export const INITIAL_VALIDATION_METRICS = INITIAL_EXPERIMENTAL_METRICS;
+export const INITIAL_VEHICLES_HORULINCE = INITIAL_VEHICLES;
+
+// Vídeos de Teste do Horulince (Seção 3.4 do Artigo)
+export const TEST_VIDEOS_HORULINCE: TestVideoSource[] = [
+  {
+    id: 'vid-01',
+    name: 'Vídeo Teste 01 (Avenida)',
+    filename: 'teste_01.mp4',
+    resolution: '1920x1080',
+    duration: '00:45',
+    fps: 60,
+    description: 'Tráfego urbano matutino na Av. Pres. Vargas com fluxo moderado de automóveis.',
+    sceneType: 'avenida_veiculos',
+    carPlateInVideo: 'ABC4E29',
+    carColorInVideo: 'Cinza',
+    carModelInVideo: 'Fiat Argo',
+    hasSticker: false,
+    hasDamage: false,
+  },
+  {
+    id: 'vid-02',
+    name: 'Vídeo Teste 02 (Rodovia / ALPR)',
+    filename: 'teste_02.mp4',
+    resolution: '1920x1080',
+    duration: '01:10',
+    fps: 60,
+    description: 'Faixa rápida da Rodovia Portinari. Captura de placas em alta velocidade.',
+    sceneType: 'rodovia_alpr',
+    carPlateInVideo: 'TST1A23',
+    carColorInVideo: 'Preto',
+    carModelInVideo: 'Chevrolet Onix',
+    hasSticker: true,
+    hasDamage: true,
+  },
+  {
+    id: 'vid-03',
+    name: 'Vídeo Teste 03 (Cruzamento Central)',
+    filename: 'teste_03.mp4',
+    resolution: '1920x1080',
+    duration: '00:55',
+    fps: 30,
+    description: 'Cruzamento com semáforo no Calçadão / Centro Histórico com pedestres e veículos.',
+    sceneType: 'calcadao_pedestres',
+    carPlateInVideo: 'BRA2E19',
+    carColorInVideo: 'Vermelho',
+    carModelInVideo: 'Hyundai HB20',
+    hasSticker: false,
+    hasDamage: false,
+  },
+  {
+    id: 'vid-04',
+    name: 'Vídeo Teste 04 (Terminal / Estacionamento)',
+    filename: 'teste_04.mp4',
+    resolution: '1920x1080',
+    duration: '01:30',
+    fps: 30,
+    description: 'Acesso do Terminal Rodoviário com veículos de aplicativo e embarque.',
+    sceneType: 'terminal_urbano',
+    carPlateInVideo: 'FRA9B88',
+    carColorInVideo: 'Prata',
+    carModelInVideo: 'Toyota Corolla',
+    hasSticker: false,
+    hasDamage: false,
+  },
+];
+

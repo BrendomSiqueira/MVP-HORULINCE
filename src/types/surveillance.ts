@@ -168,6 +168,7 @@ export interface AssistedSearchCase {
 export interface AuditLogEntry {
   id: string;
   timestamp: string;
+  time?: string;
   user: string; // ex: teste_op1, teste_op2
   action: 'confirmou p/ análise' | 'descartou' | 'solicitou revisão' | 'consulta de placa' | 'busca assistida';
   targetIdentifier: string; // ex: AL-014, Placa TST1A23, FICT-001
@@ -186,3 +187,27 @@ export interface ExperimentalMetrics {
   testedDatasets: number;
   isSimulatedBenchmarkDone: boolean;
 }
+
+// Aliases para compatibilidade entre telas do Horulince
+export type HorulinceAlert = DetectionAlert;
+export type AlertReviewState = ReviewState;
+export type MissingPersonCase = AssistedSearchCase;
+export type CandidatePersonEvent = CandidateSearchEvent;
+export type ValidationMetrics = ExperimentalMetrics;
+
+export interface TestVideoSource {
+  id: string;
+  name: string;
+  filename: string;
+  resolution: string;
+  duration: string;
+  fps: number;
+  description: string;
+  sceneType: string;
+  carPlateInVideo?: string;
+  carColorInVideo?: string;
+  carModelInVideo?: string;
+  hasSticker?: boolean;
+  hasDamage?: boolean;
+}
+

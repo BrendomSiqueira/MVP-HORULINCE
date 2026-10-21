@@ -17,8 +17,8 @@ export const AboutProjectModal: React.FC<Props> = ({ onClose }) => {
         {/* Header */}
         <div className="flex items-start justify-between border-b border-slate-800 pb-4">
           <div className="flex items-center space-x-3">
-            <div className="p-2.5 bg-gradient-to-br from-cyan-600 to-blue-700 rounded-xl text-white shadow-lg">
-              <BookOpen className="w-6 h-6" />
+            <div className="w-12 h-12 rounded-xl overflow-hidden bg-white/95 p-1 shadow-lg shadow-cyan-500/20 flex items-center justify-center border border-cyan-400/50 shrink-0">
+              <img src="/assets/aistudio/Gemini_Generated_Image_c7beozc7beozc7be_89a95088.jpg" alt="Horulince Logo" className="w-full h-full object-contain" />
             </div>
             <div>
               <span className="text-[10px] font-mono font-bold bg-amber-950 text-amber-300 border border-amber-800 px-2 py-0.5 rounded uppercase">

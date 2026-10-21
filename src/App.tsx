@@ -35,6 +35,7 @@ import { HorulinceVehicleQuery } from './components/HorulinceVehicleQuery.tsx';
 import { HorulinceAssistedSearch } from './components/HorulinceAssistedSearch.tsx';
 import { HorulinceAlertsCenter } from './components/HorulinceAlertsCenter.tsx';
 import { HorulinceExperimentalAudit } from './components/HorulinceExperimentalAudit.tsx';
+import { AboutProjectModal } from './components/AboutProjectModal.tsx';
 import {
   playTacticalAlertSound,
   playDispatchSound,
@@ -62,6 +63,7 @@ import {
   ShieldCheck,
   BarChart,
   HelpCircle,
+  BookOpen,
 } from 'lucide-react';
 import {
   matchVehicleAgainstDatabase,
@@ -92,6 +94,7 @@ export default function App() {
 
   // Modal tático do carro/pessoa encontrada
   const [focusedAlert, setFocusedAlert] = useState<DetectionAlert | null>(null);
+  const [showAboutModal, setShowAboutModal] = useState(false);
 
   // Controles de interface
   const [soundEnabled, setSoundEnabled] = useState(true);
@@ -456,9 +459,13 @@ export default function App() {
         <div className="flex flex-wrap items-center justify-between gap-3 max-w-7xl mx-auto">
           {/* Logo & Título Oficial Horulince */}
           <div className="flex items-center space-x-3">
-            <div className="p-2 bg-gradient-to-br from-cyan-600 to-blue-800 rounded-xl shadow-lg shadow-cyan-900/30 text-white flex items-center justify-center">
-              <ShieldAlert className="w-5 h-5" />
-            </div>
+            <button
+              onClick={() => setShowAboutModal(true)}
+              className="w-10 h-10 rounded-xl overflow-hidden bg-white/95 p-1 shadow-lg shadow-cyan-500/20 flex items-center justify-center border border-cyan-400/50 hover:scale-105 transition-transform shrink-0 cursor-pointer"
+              title="Clique para ver detalhes do projeto e autores (Fatec Franca)"
+            >
+              <img src="/assets/aistudio/Gemini_Generated_Image_c7beozc7beozc7be_89a95088.jpg" alt="Horulince Logo Oficial" className="w-full h-full object-contain" />
+            </button>
             <div>
               <div className="flex items-center space-x-2">
                 <h1 className="text-sm font-bold tracking-wider font-mono text-white">
@@ -499,6 +506,16 @@ export default function App() {
               ) : (
                 <VolumeX className="w-4 h-4 text-slate-500" />
               )}
+            </button>
+
+            {/* Sobre o Projeto Horulince */}
+            <button
+              onClick={() => setShowAboutModal(true)}
+              className="flex items-center space-x-1.5 px-2.5 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white rounded-lg text-xs font-mono transition-colors cursor-pointer border border-slate-700/60"
+              title="Sobre o Projeto Horulince, Autores e Conformidade Legal"
+            >
+              <BookOpen className="w-3.5 h-3.5 text-cyan-400" />
+              <span className="hidden sm:inline">Sobre</span>
             </button>
           </div>
         </div>
@@ -909,6 +926,11 @@ export default function App() {
             setActiveTab('ALERTS_CENTER');
           }}
         />
+      )}
+
+      {/* Modal Sobre o Projeto Horulince & Autores */}
+      {showAboutModal && (
+        <AboutProjectModal onClose={() => setShowAboutModal(false)} />
       )}
     </div>
   );
